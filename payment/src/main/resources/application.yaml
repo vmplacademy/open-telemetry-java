@@ -21,6 +21,8 @@ spring:
   sql:
     init:
       mode: always
+  application:
+    name: Payment Service
 
 logging:
   level:
@@ -31,12 +33,23 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, prometheus
+        include: health, prometheus, metrics
+  tracing:
+    sampling:
+      probability: 1.0
+    enabled: true
+  otlp:
+    metrics:
+      export:
+        url: http://tempo:4318/v1/metrics
+    tracing:
+      endpoint: http://tempo:4317
 
 
 # Server properties
 server:
   port: 8091
+
 
 # Application internal properties
 payment:

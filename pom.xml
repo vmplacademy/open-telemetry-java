@@ -10,14 +10,14 @@
         <version>3.4.0</version>
     </parent>
 
-    <groupId>com.tkluza.smartcity</groupId>
+    <groupId>pl.vmplacademy.opentelemetry</groupId>
     <artifactId>parent</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
     <name>OpenTelemetry Application Monitoring</name>
 
     <modules>
-        <module>smartmobility</module>
+        <module>smart-mobility</module>
         <module>payment</module>
     </modules>
 
@@ -28,6 +28,9 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.kotlin.version>2.13.4</jackson.kotlin.version>
+        <opentelemetry-instrumentation.version>2.1.0-alpha</opentelemetry-instrumentation.version>
+        <p6spy.version>3.9.1</p6spy.version>
+        <loki4j.version>1.4.1</loki4j.version>
     </properties>
 
     <dependencyManagement>
@@ -86,18 +89,44 @@
                 <artifactId>jackson-module-kotlin</artifactId>
                 <version>${jackson.kotlin.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.loki4j</groupId>
+                <artifactId>loki-logback-appender</artifactId>
+                <version>${loki4j.version}</version>
+            </dependency>
+            <!--Observability -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>${micrometer.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing-bridge-otel</artifactId>
+                <version>${micrometer-tracing.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-exporter-otlp</artifactId>
+                <version>${opentelemetry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry.instrumentation</groupId>
+                <artifactId>opentelemetry-jdbc</artifactId>
+                <version>${opentelemetry-instrumentation.version}</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>p6spy</groupId>-->
+<!--                <artifactId>p6spy</artifactId>-->
+<!--                <version>${p6spy.version}</version>-->
+<!--            </dependency>-->
             <!--Tools -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>io.micrometer</groupId>
-                <artifactId>micrometer-registry-prometheus</artifactId>
-                <version>${micrometer.version}</version>
-                <scope>runtime</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

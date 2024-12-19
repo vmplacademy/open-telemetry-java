@@ -5,11 +5,11 @@
 
     <parent>
         <artifactId>parent</artifactId>
-        <groupId>com.tkluza.smartcity</groupId>
+        <groupId>pl.vmplacademy.opentelemetry</groupId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>smartmobility</artifactId>
+    <artifactId>smart-mobility</artifactId>
     <name>Smart mobility</name>
 
     <properties>
@@ -43,11 +43,30 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <groupId>com.github.loki4j</groupId>
+            <artifactId>loki-logback-appender</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
-            <version>${micrometer.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-otel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-exporter-otlp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opentelemetry.instrumentation</groupId>
+            <artifactId>opentelemetry-jdbc</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>p6spy</groupId>-->
+<!--            <artifactId>p6spy</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
