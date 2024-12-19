@@ -4,11 +4,13 @@ import com.tkluza.smartcity.payment.business.core.dto.event.PaymentConfirmedEven
 import com.tkluza.smartcity.payment.business.core.dto.event.PaymentRejectedEvent
 import com.tkluza.smartcity.payment.business.external.reservation.http.ReservationExternalHttpClient
 import org.slf4j.LoggerFactory
+import org.springframework.scheduling.annotation.Async
+import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.transaction.event.TransactionPhase
 import org.springframework.transaction.event.TransactionalEventListener
 
-@Transactional
+@Transactional(propagation = Propagation.REQUIRES_NEW)
 class ReservationExternalFacadeAdapter(
     private val reservationExternalHttpClient: ReservationExternalHttpClient
 ) : ReservationExternalFacade {

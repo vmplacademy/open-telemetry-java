@@ -13,8 +13,8 @@
     <name>Payment</name>
 
     <properties>
-        <java.version>17</java.version>
-        <kotlin.version>1.7.20</kotlin.version>
+        <java.version>21</java.version>
+        <kotlin.version>2.1.0</kotlin.version>
     </properties>
 
     <dependencies>
@@ -107,7 +107,7 @@
                         <option>all-open:annotation=javax.persistence.Embeddable</option>
                         <option>all-open:annotation=javax.persistence.MappedSuperclass</option>
                     </pluginOptions>
-                    <jvmTarget>1.8</jvmTarget>
+                    <jvmTarget>${java.version}</jvmTarget>
                 </configuration>
                 <dependencies>
                     <dependency>

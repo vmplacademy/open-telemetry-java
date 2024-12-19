@@ -2,7 +2,7 @@ package com.tkluza.smartcity.payment.business.core.domain
 
 import com.tkluza.smartcity.payment.business.core.domain.service.PaymentService
 import com.tkluza.smartcity.payment.business.core.dto.command.CreatePaymentCommand
-import javax.transaction.Transactional
+import jakarta.transaction.Transactional
 
 @Transactional
 open class PaymentFacadeAdapter(

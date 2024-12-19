@@ -1,6 +1,6 @@
 ######## SmartMobility Application build stage ########
-FROM openjdk:17.0-jdk-oracle
+FROM eclipse-temurin:21-jre
 
 COPY target/*.jar app.jar
 
-ENTRYPOINT ["java","-jar","/app.jar"]a
+ENTRYPOINT ["java","-jar","/app.jar"]

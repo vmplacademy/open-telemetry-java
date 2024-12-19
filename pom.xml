@@ -7,14 +7,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.5</version>
+        <version>3.4.0</version>
     </parent>
 
     <groupId>com.tkluza.smartcity</groupId>
     <artifactId>parent</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>Mythological application monitoring</name>
+    <name>OpenTelemetry Application Monitoring</name>
 
     <modules>
         <module>smartmobility</module>
@@ -23,9 +23,9 @@
 
     <properties>
         <revision>1.0.0-SNAPSHOT</revision>
-        <spring.boot.version>2.7.5</spring.boot.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <spring.boot.version>3.4.0</spring.boot.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.kotlin.version>2.13.4</jackson.kotlin.version>
     </properties>

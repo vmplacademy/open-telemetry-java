@@ -14,9 +14,9 @@ import com.tkluza.smartcity.smartmobility.business.reservation.dto.command.Creat
 import com.tkluza.smartcity.smartmobility.business.reservation.dto.event.ReservationCreatedEvent;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
 import java.util.Random;
 import java.util.UUID;
